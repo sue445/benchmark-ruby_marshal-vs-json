@@ -2,24 +2,32 @@
 Benchmark `Marshal` vs `json`
 
 ## Report
-### `Marshal.load` vs `JSON.load`
+### `Marshal.load` vs `JSON.load` vs `Oj.load` (compat mode)
 ```bash
 $ bundle exec ruby bench.rb
 Warming up --------------------------------------
-        Marshal.load   139.040k i/100ms
-           JSON.load    90.604k i/100ms
+        Marshal.load   136.687k i/100ms
+           JSON.load    84.018k i/100ms
+Oj.load (compat mode)
+                       271.304k i/100ms
 Calculating -------------------------------------
-        Marshal.load      1.400M (± 1.7%) i/s -      7.091M in   5.068045s
-           JSON.load    885.701k (± 0.4%) i/s -      4.440M in   5.012601s
+        Marshal.load      1.363M (± 2.3%) i/s -      6.834M in   5.018257s
+           JSON.load    888.781k (± 1.3%) i/s -      4.453M in   5.011076s
+Oj.load (compat mode)
+                          2.697M (± 1.0%) i/s -     13.565M in   5.030179s
 ```
 
-### `Marshal.dump` vs `Hash#to_json`
+### `Marshal.dump` vs `Hash#to_json` vs `Oj.dump` (compat mode)
 ```bash
 $ bundle exec ruby bench_save.rb
 Warming up --------------------------------------
-        Marshal.dump   112.291k i/100ms
-        Hash#to_json   119.073k i/100ms
+        Marshal.dump   108.381k i/100ms
+        Hash#to_json   118.309k i/100ms
+Oj.dump (compat mode)
+                       574.995k i/100ms
 Calculating -------------------------------------
-        Marshal.dump      1.095M (± 0.7%) i/s -      5.502M in   5.025235s
-        Hash#to_json      1.186M (± 0.7%) i/s -      5.954M in   5.020268s
+        Marshal.dump      1.092M (± 1.3%) i/s -      5.527M in   5.063741s
+        Hash#to_json      1.154M (± 2.6%) i/s -      5.797M in   5.026218s
+Oj.dump (compat mode)
+                          5.758M (± 0.8%) i/s -     29.325M in   5.093626s
 ```
