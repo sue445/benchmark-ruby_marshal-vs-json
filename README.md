@@ -1,5 +1,5 @@
 # benchmark-ruby_marshal-vs-json
-Benchmark `Marshal` vs `json`
+Benchmark `Marshal` vs `json` vs [oj](https://github.com/ohler55/oj)
 
 ## Report
 ### `Marshal.load` vs `JSON.load` vs `Oj.load` (compat mode)
