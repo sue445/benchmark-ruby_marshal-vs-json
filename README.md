@@ -4,7 +4,7 @@ Benchmark `Marshal` vs `json` vs [oj](https://github.com/ohler55/oj)
 ## Report
 ### `Marshal.load` vs `JSON.load` vs `Oj.load` (compat mode)
 ```bash
-$ bundle exec ruby bench.rb
+$ bundle exec ruby bench_load.rb
 Warming up --------------------------------------
         Marshal.load   136.687k i/100ms
            JSON.load    84.018k i/100ms
